@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="UID5"]
+
+[node name="Gameplay" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D"]
+    mesh = BoxMesh.new()
+    mesh.size = Vector3(100, 1, 100)
+    material = ShaderMaterial.new()
+    shader = Shader.new()
+    shader.code = "
+        shader_type spatial;
+        void fragment() {
+            ALBEDO = vec3(0.6, 0.6, 0.6);
+        }
+    "
+
+[node name="Camera"] type="Camera3D"
+    position = Vector3(0, 10, -15)
+    rotation_degrees = Vector3(25, 0, 0)
+    current = true
+    environment = SubResource(0)
+
+[node name="Light"] type="DirectionalLight3D"
+    rotation_degrees = Vector3(45, -45, 0)
+    energy = 1.5
+    shadow_enabled = true
+
+[node name="UI"] type="CanvasLayer"
+    [node name="MarginContainer" type="MarginContainer"]
+        margin_left = 10
+        margin_top = 10
+        margin_right = 10
+        margin_bottom = 10
+        [node name="VBoxContainer" type="VBoxContainer"]
+            [node name="PlayerLabel" type="Label"]
+                text = "Player: "
+            [node name="MoneyLabel" type="Label"]
+                text = "Money: $0"
+
+[subresources]
+    [subresource type="Environment"]
+        background = SubResource(1)
+
+    [subresource type="PanoramaSky"]
+        energy = 0.5
+        sky_color = Color(0.5, 0.7, 1.0)
+        ground_color = Color(0.3, 0.3, 0.3)
