@@ -1,20 +1,23 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
+[config]
 
-config_version=5
+application/config/name = "3D Tycoon Game"
+application/run/main_scene = "res://scenes/main_menu.tscn"
+
+rendering/renderer/rendering_method = "forward_plus"
 
 [application]
 
-config/name="game1-try"
-config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/name = "3D Tycoon Game"
+run/main_scene = "res://scenes/main_menu.tscn"
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method = "forward_plus"
+
+[autoload]
+
+game_state = "res://autoload/game_state.gd"
+save_load = "res://autoload/save_load_manager.gd"
+resource_manager = "res://autoload/resource_manager.gd"
+
+EOF
