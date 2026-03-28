@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="UID6"]
+
+[node name="Settings" type="Control"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Label" type="Label"]
+text = "Settings Work in Progress"
+align = 1
+valign = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+size = Vector2(600, 100)
